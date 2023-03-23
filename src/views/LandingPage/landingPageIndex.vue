@@ -1,16 +1,22 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import HeaderVue from './components/headerVue.vue'
+import HeaderSection from './components/headerSection.vue'
+import HeroSection from './components/heroSection.vue'
+import LogoSection from './components/logoSection.vue'
 export default defineComponent({
   data: () => ({}),
   components: {
-    HeaderVue
+    HeaderSection,
+    HeroSection,
+    LogoSection
   }
 })
 </script>
 
 <template>
-  <HeaderVue />
+  <HeaderSection />
+  <HeroSection />
+  <LogoSection />
 </template>
 
 <style scoped lang="scss"></style>
