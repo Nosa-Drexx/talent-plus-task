@@ -1,0 +1,12 @@
+@font-face {
+    font-family: Satoshi;
+    src: url(./fonts/Satoshi-Regular.ttf);
+}
+
+@font-face {
+    font-family: ClashDisplay;
+    src: url(./fonts/ClashDisplay-Bold.ttf);
+}
+
+$fontPrimary: "ClashDisplay";
+$fontSecondary:  "Satoshi";

@@ -1,0 +1,18 @@
+@import './colors';
+@import './fonts';
+@import './mixins';
+
+*,*::after, *::before {
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

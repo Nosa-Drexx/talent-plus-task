@@ -1,0 +1,36 @@
+@mixin flex($type: row nowrap, $justify: center, $align: center) {
+    display: flex;
+    flex-flow: $type;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin button($width, $height, $background: transparent, $radius: 0px) {
+    background: $background;
+    width: $width;
+    height: $height;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    border-radius: $radius;
+    cursor: pointer;
+}
+
+@mixin font( $weight: normal, $size: 16px, $family: $fontPrimary, $line: normal) {
+    font-family: $family;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $line;
+}
+
+@mixin img($width, $height, $fit: contain) {
+    width: $width;
+    height: $height;
+    object-fit: $fit;
+}
+
+@mixin pageLayout() {
+    width: 100%;
+    max-width: 1488px;
+    margin: auto;
+}
