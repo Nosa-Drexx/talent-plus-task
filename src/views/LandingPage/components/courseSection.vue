@@ -4,10 +4,12 @@ import allCategory from './allCategory.vue'
 import marketCategory from './marketCategory.vue'
 import designCategory from './designCategory.vue'
 import developmentCategory from './developmentCategory.vue'
+import starbackground from '../images/starbackground.svg'
 
 export default defineComponent({
   data: () => ({
-    active: 'all'
+    active: 'all',
+    starbackground: starbackground
   }),
   methods: {
     toggleCategory(e: MouseEvent): void {
@@ -40,6 +42,7 @@ export default defineComponent({
 
 <template>
   <section class="courses">
+    <img :src="starbackground" alt="star-background" class="star-background" />
     <div class="courses-contents">
       <div class="info">
         <h2>Browse Our Popular Courses</h2>
@@ -67,6 +70,9 @@ export default defineComponent({
         <designCategory v-else-if="active === 'design'" />
         <allCategory v-else />
       </div>
+
+      <button class="view-courses mobile">View Courses</button>
+      <button class="view-courses desktop">Explore All Courses</button>
     </div>
   </section>
 </template>
@@ -77,8 +83,14 @@ export default defineComponent({
 @import '@/assets/fonts';
 
 .courses {
+  position: relative;
   width: 100%;
   background: $aboutSection;
+  .star-background {
+    position: absolute;
+    left: 0.2rem;
+    top: 30px;
+  }
   &-contents {
     @include pageLayout();
     @include flex(column nowrap);
@@ -107,7 +119,7 @@ export default defineComponent({
         &-btn {
           @include flex();
           @include button(4.313rem, 1.188rem, transparent, 4px);
-          padding: 4px, 8px;
+          padding: 4px 8px;
           @include font(700, 0.5rem, $fontSecondary, 11px);
           color: $grayText;
         }
@@ -119,7 +131,68 @@ export default defineComponent({
     }
     .category {
       width: 100%;
-      border: 1px solid black;
+    }
+
+    .view-courses {
+      @include flex();
+      @include font(700, 0.5rem, $fontSecondary, 11px);
+      @include button(auto, auto, $primaryColor, 2.19897px);
+      margin-top: 2rem;
+      padding: 8px 16px;
+      color: $white;
+    }
+    .desktop {
+      display: none;
+    }
+  }
+}
+@media (min-width: 800px) {
+  .courses {
+    .star-background {
+      @include img(50px, 51.66px);
+      position: absolute;
+      left: 4rem;
+      top: 15rem;
+    }
+
+    &-contents {
+      .info {
+        gap: 8px;
+        padding: 5rem 1rem 0 1rem;
+        h2 {
+          @include font(700, 3.5rem, $fontPrimary, 4.305rem);
+        }
+        p {
+          @include font(500, 1rem, $fontSecondary, 1.75rem);
+          max-width: 46.438rem;
+        }
+        .categories {
+          padding-top: calc(68px - 8px);
+          &-btn {
+            @include button(8.563rem, 3rem, transparent, 4px);
+            padding: 12px 16px;
+            @include font(700, 1rem, $fontSecondary, 21.6px);
+          }
+          .active {
+            @include button(8.563rem, 3rem, $white, 4px);
+            color: $primaryColor;
+          }
+        }
+      }
+      .desktop {
+        display: unset;
+      }
+      .view-courses {
+        @include flex();
+        @include font(700, 1rem, $fontSecondary, 22px);
+        @include button(auto, auto, $primaryColor, 4px);
+        margin-top: 2.25rem;
+        padding: 16px 32px;
+        color: $white;
+      }
+      .mobile {
+        display: none;
+      }
     }
   }
 }

@@ -17,4 +17,28 @@ body {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+
+    .v-btn--variant-plain,
+    .v-btn--variant-outlined,
+    .v-btn--variant-text,
+    .v-btn--variant-tonal {
+      background: $lightBlue;
+      margin: 0 4px;
+
+    }
+
+    .v-btn--icon.v-btn--density-default {
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+    .v-btn--active {
+        background: $primaryColor;
+    }
+
+    @media(min-width: 800px) {
+        .v-btn--icon.v-btn--density-default {
+            width: 0.625rem;
+            height: 0.625rem;
+        }
+    }
 }

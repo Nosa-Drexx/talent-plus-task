@@ -6,6 +6,9 @@ import LogoSection from './components/logoSection.vue'
 import AboutSection from './components/aboutSection.vue'
 import WhySection from './components/whySection.vue'
 import CourseSection from './components/courseSection.vue'
+import ReviewSection from './components/reviewsSection.vue'
+import ConnectSection from './components/connectSection.vue'
+import QuestionsSection from './components/questionsSection.vue'
 export default defineComponent({
   data: () => ({}),
   components: {
@@ -14,7 +17,10 @@ export default defineComponent({
     LogoSection,
     AboutSection,
     WhySection,
-    CourseSection
+    CourseSection,
+    ReviewSection,
+    ConnectSection,
+    QuestionsSection
   }
 })
 </script>
@@ -26,6 +32,9 @@ export default defineComponent({
   <AboutSection />
   <WhySection />
   <CourseSection />
+  <ReviewSection />
+  <ConnectSection />
+  <QuestionsSection />
 </template>
 
 <style scoped lang="scss"></style>

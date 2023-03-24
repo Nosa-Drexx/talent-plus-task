@@ -1,0 +1,13 @@
+@mixin flex($type: row nowrap, $justify: center, $align: center) {
+    display: flex;
+    flex-flow: $type;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin font( $weight: normal, $size: 16px, $family: $fontPrimary, $line: normal) {
+    font-family: $family;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $line;
+}
