@@ -5,6 +5,7 @@ import HeroSection from './components/heroSection.vue'
 import LogoSection from './components/logoSection.vue'
 import AboutSection from './components/aboutSection.vue'
 import WhySection from './components/whySection.vue'
+import CourseSection from './components/courseSection.vue'
 export default defineComponent({
   data: () => ({}),
   components: {
@@ -12,7 +13,8 @@ export default defineComponent({
     HeroSection,
     LogoSection,
     AboutSection,
-    WhySection
+    WhySection,
+    CourseSection
   }
 })
 </script>
@@ -23,6 +25,7 @@ export default defineComponent({
   <LogoSection />
   <AboutSection />
   <WhySection />
+  <CourseSection />
 </template>
 
 <style scoped lang="scss"></style>
