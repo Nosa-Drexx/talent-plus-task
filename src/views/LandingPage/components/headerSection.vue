@@ -34,7 +34,7 @@ export default defineComponent({
 @import '@/assets/mixins';
 @import '@/assets/fonts';
 .header {
-  width: 100%;
+  width: 100vw;
   padding: 1rem;
   padding-top: 48px;
   background: $primaryColor;

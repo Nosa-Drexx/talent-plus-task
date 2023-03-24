@@ -46,7 +46,7 @@ export default defineComponent({
 @import '@/assets/mixins';
 @import '@/assets/fonts';
 .hero {
-  width: 100%;
+  width: 100vw;
   background: $primaryColor;
   padding-top: calc(46px - 1rem);
   &-contents {
