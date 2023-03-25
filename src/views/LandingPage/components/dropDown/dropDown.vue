@@ -26,7 +26,7 @@ export default defineComponent({
       }
       if (this.showDropDown) {
         title.className = 'title active'
-        dropDown.style.height = '70px'
+        dropDown.style.height = '100px'
       } else {
         title.className = 'title'
         dropDown.style.height = '0px'
@@ -86,11 +86,29 @@ export default defineComponent({
   }
   .show {
     @include font(500, 0.5rem, $fontPrimary, 1rem);
+    @include flex(row wrap);
     width: 100%;
     color: $grayText;
     overflow: hidden;
     height: 0px;
     transition: height 0.5s;
+  }
+}
+@media (min-width: 800px) {
+  .drop-down {
+    padding: 2rem 0;
+    gap: 20px;
+    .title {
+      h3 {
+        @include font(700, 1.5rem, $fontPrimary, 2.006rem);
+      }
+      span {
+        @include font(500, 1.5rem, $fontPrimary, 1.181rem);
+      }
+    }
+    .show {
+      @include font(500, 1rem, $fontPrimary, 1.625rem);
+    }
   }
 }
 </style>

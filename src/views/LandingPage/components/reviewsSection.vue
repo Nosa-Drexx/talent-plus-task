@@ -214,7 +214,7 @@ export default defineComponent({
       padding-top: 48px;
       .review-container {
         width: 100%;
-        height: 296px;
+        height: 350px;
       }
       .review-info {
         gap: 24.5px;
