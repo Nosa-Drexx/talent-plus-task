@@ -80,6 +80,7 @@ export default defineComponent({
       position: absolute;
       left: 0;
       top: 100%;
+      height: 0px;
       transition: height 0.5s;
       width: 100%;
       background: $white;
