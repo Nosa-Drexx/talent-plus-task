@@ -26,7 +26,7 @@ npm run build
 npm run lint
 ```
 
-### format with [Prettier](https://prettier.com/)
+### format with [Prettier](https://prettier.io/)
 
 ```sh
 npm run format
