@@ -26,7 +26,7 @@ npm run build
 npm run lint
 ```
 
-### format with [Prettier](https://prettier.io/)
+### Format with [Prettier](https://prettier.io/)
 
 ```sh
 npm run format
@@ -44,4 +44,4 @@ docker build -t vuejs-cookbook/dockerize-vuejs-app .
 docker run -it -p 8080:80 --rm --name dockerize-vuejs-app-1 vuejs-cookbook/dockerize-vuejs-app
 ```
 
-Runs on port 8080 visit localhost:8080
+Docker build runs on port 8080 visit localhost:8080
