@@ -9,6 +9,7 @@ import CourseSection from './components/courseSection.vue'
 import ReviewSection from './components/reviewsSection.vue'
 import ConnectSection from './components/connectSection.vue'
 import QuestionsSection from './components/questionsSection.vue'
+import FooterSection from './components/footerSection.vue'
 export default defineComponent({
   data: () => ({}),
   components: {
@@ -20,21 +21,31 @@ export default defineComponent({
     CourseSection,
     ReviewSection,
     ConnectSection,
-    QuestionsSection
+    QuestionsSection,
+    FooterSection
   }
 })
 </script>
 
 <template>
-  <HeaderSection />
-  <HeroSection />
-  <LogoSection />
-  <AboutSection />
-  <WhySection />
-  <CourseSection />
-  <ReviewSection />
-  <ConnectSection />
-  <QuestionsSection />
+  <div class="landing-page">
+    <HeaderSection />
+    <HeroSection />
+    <LogoSection />
+    <AboutSection />
+    <WhySection />
+    <CourseSection />
+    <ReviewSection />
+    <ConnectSection />
+    <QuestionsSection />
+    <FooterSection />
+  </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+@import '@/assets/colors';
+.landing-page {
+  width: 100%;
+  background: $primaryColor;
+}
+</style>

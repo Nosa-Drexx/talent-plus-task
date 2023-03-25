@@ -1,6 +1,6 @@
 <script>
 import { defineComponent } from 'vue'
-import dropDown from './dropDown/dropDown.vue'
+import dropDown from '@/components/dropDown/dropDown.vue'
 import orangeZag from '../images/orangeZag.svg'
 import oval from '../images/oval.svg'
 import greenhalfcircle from '../images/greenhalfcircle.svg'

@@ -41,7 +41,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <section class="courses">
+  <section class="courses" id="courses">
     <img :src="starbackground" alt="star-background" class="star-background" />
     <div class="courses-contents">
       <div class="info">

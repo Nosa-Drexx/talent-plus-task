@@ -15,7 +15,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="hero-contents">
       <div class="info">
         <h1>
@@ -46,7 +46,7 @@ export default defineComponent({
 @import '@/assets/mixins';
 @import '@/assets/fonts';
 .hero {
-  width: 100vw;
+  width: 100%;
   background: $primaryColor;
   padding-top: calc(46px - 1rem);
   &-contents {
@@ -62,13 +62,15 @@ export default defineComponent({
         padding: 0px;
       }
       h1 {
-        @include font(700, 32px, $fontPrimary, 46px);
+        @include font(700, 2rem, $fontPrimary, 2.875rem);
+        width: 100%;
         text-align: center;
         color: $white;
       }
       p {
-        @include font(500, 8px, $fontSecondary, 15px);
-        width: 297.58px;
+        @include font(500, 0.5rem, $fontSecondary, 0.938rem);
+        max-width: 297.58px;
+        width: 100%;
         text-align: center;
         color: $grey;
       }

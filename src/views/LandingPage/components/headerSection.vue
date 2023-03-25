@@ -5,8 +5,20 @@ import Menu from '../images/menu.svg'
 export default defineComponent({
   data: () => ({
     logo: TechTime,
-    menu: Menu
-  })
+    menu: Menu,
+    showNav: false
+  }),
+  methods: {
+    showNavMobile() {
+      const navMobile = this.$refs.navMobile as HTMLElement
+      this.showNav = !this.showNav
+      if (this.showNav) {
+        navMobile.style.height = '190px'
+      } else {
+        navMobile.style.height = '0px'
+      }
+    }
+  }
 })
 </script>
 
@@ -14,16 +26,25 @@ export default defineComponent({
   <header class="header">
     <div class="header-contents">
       <img class="logo" :src="logo" alt="tech-time-logo" />
-      <button class="nav-btn"><img :src="menu" alt="nav-menu" /></button>
+      <button class="nav-btn" @click="showNavMobile"><img :src="menu" alt="nav-menu" /></button>
       <nav class="nav-list">
         <ul>
-          <li><button>Home</button></li>
-          <li><button>About Us</button></li>
-          <li><button>Courses</button></li>
-          <li><button>Testimonial</button></li>
-          <li><button>Community</button></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#courses"> Courses</a></li>
+          <li><a href="#testimonial">Testimonial</a></li>
+          <li><a href="#community">Community</a></li>
         </ul>
         <button class="enroll">Enroll Now</button>
+      </nav>
+      <nav class="nav-mobile" ref="navMobile">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#courses"> Courses</a></li>
+          <li><a href="#testimonial">Testimonial</a></li>
+          <li><a href="#community">Community</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -35,9 +56,13 @@ export default defineComponent({
 @import '@/assets/fonts';
 .header {
   width: 100vw;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  // background: $primaryColor;
+  backdrop-filter: blur(8px);
   padding: 1rem;
   padding-top: 48px;
-  background: $primaryColor;
   &-contents {
     @include pageLayout();
     @include flex(row nowrap, space-between);
@@ -49,6 +74,36 @@ export default defineComponent({
       @include flex();
       img {
         @include img(100%, 100%);
+      }
+    }
+    .nav-mobile {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      transition: height 0.5s;
+      width: 100%;
+      background: $white;
+      overflow: hidden;
+      ul {
+        @include flex(column nowrap, flex-start, flex-start);
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        li {
+          @include flex(column nowrap, flex-start, flex-start);
+          list-style-type: none;
+          width: 100%;
+          a {
+            @include font(700, 16px, $fontSecondary);
+            width: 100%;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            color: $black;
+          }
+          a:hover {
+            background: $lightBlue;
+          }
+        }
       }
     }
     .nav-list {
@@ -68,6 +123,9 @@ export default defineComponent({
       .nav-btn {
         display: none;
       }
+      .nav-mobile {
+        display: none;
+      }
       .nav-list {
         @include flex();
         gap: 40px;
@@ -80,19 +138,15 @@ export default defineComponent({
             margin: 0px;
             padding: 0px;
             list-style-type: none;
-            button {
+            a {
               @include button(auto, auto);
               @include font(700, 16px, $fontSecondary);
               color: $lightBlue;
+              text-decoration: none;
             }
           }
           li:hover {
-            button {
-              color: $white;
-            }
-          }
-          li:first-child {
-            button {
+            a {
               color: $white;
             }
           }

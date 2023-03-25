@@ -26,7 +26,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <section class="about">
+  <section class="about" id="about">
     <div class="about-content">
       <img :src="zag" alt="background" class="zag" />
       <img :src="semicircle" alt="background" class="semicircle" />

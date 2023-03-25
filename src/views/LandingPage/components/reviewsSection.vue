@@ -14,7 +14,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <section class="reviews">
+  <section class="reviews" id="testimonial">
     <div class="reviews-contents">
       <h2>What Our Clients Are Saying</h2>
       <p>

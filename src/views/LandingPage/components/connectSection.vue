@@ -9,7 +9,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <section class="connect">
+  <section class="connect" id="community">
     <div class="connect-contents">
       <div class="text">
         <p class="join">JOIN OUR COMMUNITY</p>

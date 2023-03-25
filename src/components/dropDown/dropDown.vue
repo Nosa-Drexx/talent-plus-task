@@ -16,7 +16,8 @@ export default defineComponent({
     showDropDown: false
   }),
   methods: {
-    handleDropDown(value?: boolean) {
+    handleDropDown(value?: boolean, event?: MouseEvent) {
+      if (event) event?.preventDefault()
       const dropDown = this.$refs.dropDown as HTMLDivElement
       const title = this.$refs.title as HTMLDivElement
       if (typeof value !== 'boolean') {
@@ -39,7 +40,7 @@ export default defineComponent({
 <template>
   <section
     class="drop-down"
-    @click="() => handleDropDown()"
+    @mousedown.prevent="(event) => handleDropDown(undefined, event)"
     @focus="() => handleDropDown(true)"
     @blur="() => handleDropDown(false)"
     tabindex="0"
